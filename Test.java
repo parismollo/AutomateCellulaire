@@ -1,23 +1,27 @@
 public class Test{
   public static void main(String[] args){
-    Liste l = new Liste();
-    Cellule c1 = new Cellule(true);
-    Cellule c2 = new Cellule(false);
-
-    Cellule[] cs1 = generateCellule(3);
-    Cellule[] cs2 = generateCellule(3);
-
-//  adding at first
-    for (int i=0; i<cs1.length; i++){
-      l.add(cs1[i], true);
-    }
-
-//  adding at last
-    for (int i=0; i<cs2.length; i++){
-      l.add(cs2[i], false);
-    }
-
+    Automate l = new Automate();
+    l.initialisation();
     l.afficherListe();
+
+    l.prochaineEtape();
+    l.miseAJour();
+    l.afficherListe();
+//     Cellule c1 = new Cellule(true);
+//     Cellule c2 = new Cellule(false);
+//
+//     Cellule[] cs1 = generateCellule(3);
+//     Cellule[] cs2 = generateCellule(3);
+//
+// //  adding at first
+//     for (int i=0; i<cs1.length; i++){
+//       l.add(cs1[i], true);
+//     }
+//
+// //  adding at last
+//     for (int i=0; i<cs2.length; i++){
+//       l.add(cs2[i], false);
+//     }
   }
 
   public static Cellule[] generateCellule(int quantite){
