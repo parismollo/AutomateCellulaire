@@ -2,11 +2,10 @@ public class Test{
   public static void main(String[] args){
     Automate l = new Automate();
     l.initialisation();
-    l.afficherListe();
+    l.nEtapes(5);
 
-    l.prochaineEtape();
-    l.miseAJour();
-    l.afficherListe();
+    Automate l2 = new Automate("###--#-");
+    l2.afficherListe();
 //     Cellule c1 = new Cellule(true);
 //     Cellule c2 = new Cellule(false);
 //

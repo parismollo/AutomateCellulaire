@@ -9,8 +9,17 @@
     System.out.println("[Constructor] - Liste created!");
   }
 
+  public Automate(String str){
+    for (int i=0; i<str.length(); i++){
+      boolean b = (str.charAt(i) == '#' ? true : false);
+      Cellule c = new Cellule(b);
+      add(c, false);
+    }
+  }
+
   public Automate(){
-    this(null);
+    this.first = null;
+    this.last = null;
   }
 
   // Auxiliary fonctions
@@ -66,5 +75,21 @@
   public void miseAJour(){
     if (this.isEmpty()) {return;}
     this.first.miseAJour();
+  }
+
+  public void uneEtape(){
+    prochaineEtape();
+    miseAJour();
+  }
+
+  public void nEtapes(int n){
+    if (n>0){
+      int i = 0;
+      while (i<n){
+        afficherListe();
+        uneEtape();
+        i++;
+      }
+    }
   }
 }
